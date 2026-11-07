@@ -1,0 +1,14 @@
+# Generated scientific results / logs
+results/
+sandbox_*/
+*.log
+# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+# Input data under data/ are intentionally NOT ignored.
+# Check privacy, provenance, and GitHub file limits before uploading data.

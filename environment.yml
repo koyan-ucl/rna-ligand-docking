@@ -1,0 +1,24 @@
+name: molecular-jupyter
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+  - jupyterlab_widgets
+  - nglview=3.1.4
+  - setuptools<81
+  - pandas
+  - openmm
+  - pdbfixer
+  - openbabel
+  - fpocket
+  - vina
+  - biobb_io=5.3.0
+  - biobb_vs=5.3.0
+  - biobb_structure_utils=5.3.0
+  - biobb_chemistry=5.3.2
+  - pytest
