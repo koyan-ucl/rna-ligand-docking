@@ -69,7 +69,7 @@ The environment requests Python 3.11, JupyterLab, nglview 3.1.4, OpenMM/PDBFixer
 ### Important compatibility notes
 
 - With nglview 3.1.4, `pkg_resources` can issue a harmless deprecation warning. Pinning `setuptools<81` retains it.
-- BioBB's `str_check_add_hydrogens` `ph` mode was rejected by the underlying `check_structure` installation in the earlier run. The notebook uses **`mode='auto'`** and validates the output PDBQT format. This does **not** prove that RNA partial charges are appropriate.
+- BioBB's `str_check_add_hydrogens` `ph` mode was rejected by the underlying `check_structure` installation in the earlier run. The notebook uses **`mode='auto'`** and validates the output PDBQT format. This does **not** prove that RNA partial charges are appropriate. If the output does not contain correctly formatted charges/types, the notebook retains the BioBB file and tries Open Babel as an explicitly labeled fallback; this can change the charge assignment.
 - The workflow defaults to serial batch docking. Switching to process workers can help throughput, but verify a small test and per-worker CPU usage first.
 
 ## 2. Add your actual molecular files
@@ -117,6 +117,10 @@ Open `notebooks/RNA_Docking_Workflow.ipynb` in JupyterLab and select the `molecu
 - `POCKET_VOLUME_RANGE` and `BOX_OFFSET` if you intend to change the original pocket-selection protocol.
 - `MAX_LIGANDS = 5` for a quick smoke test, then `None` for all IDs; start with `MAX_WORKERS = 1`, then try `3`.
 
+Pocket visualization now uses the original **red cavity surfaces and sky-blue contour/mesh surfaces**, not default atom dots. The selected pocket and the docking box are shown as a mesh and connected box edges.
+
+**Receptor preparation:** section 6 first checks BioBB output, prints example invalid PDBQT records, and (only if necessary) retries with Open Babel in rigid-receptor mode (`-xr -xn`). It saves the original BioBB output as `results/prep_receptor_biobb.pdbqt` for comparison. The alternative method is **not chemically equivalent**; check RNA phosphate partial charges and docking sensitivity before publishing scores.
+
 **Outputs:** generated RNA, pocket artifacts and box in `results/`; individual docking in `results/single/`; batch runs and `results/batch/results.csv` in `results/batch/`.
 
 Example `results.csv` columns: `ligand_id`, `status`, `affinity_kcal_mol`, `sdf_path`, `pose_path`, `error`. `ok` means successfully docked, `skipped` means a previously generated result was reused, and `error` gives a human-readable per-ligand failure.
@@ -160,7 +164,7 @@ This clones a public repository into `/content/`. If your SDFs are not public/on
 
 The original notebook intentionally removed heterogens and waters. For RNA, removing metal ions such as Mg²⁺ can remove structural stabilizers; decide whether the original method suits your target. Inspect hydrogen addition, phosphate charge assignments and atom types in the PDBQT before production docking. Vina's scoring function is not a substitute for physics-based free-energy calculations, and the original workflow does not fix random seeds. Differences in Vina/fpocket/BioBB versions or pocket selection can change poses and scores.
 
-For an exact re-run, retain the **original downloaded structures**, their provenance, parameters, external executable versions and output logs. CI tests here cover helper code only; they do not validate physical correctness or run docking.
+For an exact re-run, retain the **original downloaded structures**, their provenance, parameters, external executable versions and output logs. The PDBQT helper now checks documented fixed-column charge, atom-type and XYZ fields and prints sample malformed records; it does not establish charge-model validity. CI tests here cover helper code only; they do not validate physical correctness or run docking.
 
 ## Software and documentation
 

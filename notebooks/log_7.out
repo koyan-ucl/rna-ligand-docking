@@ -1,0 +1,17 @@
+2026-11-08 16:27:26,157 [MainThread  ] [INFO ]  Module: biobb_vs.fpocket.fpocket_run Version: 5.3.0
+2026-11-08 16:27:26,158 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_ef933ade-9700-439b-b9c5-7768cbbd4088
+2026-11-08 16:27:26,158 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/processed.pdb --> sandbox_ef933ade-9700-439b-b9c5-7768cbbd4088
+2026-11-08 16:27:26,158 [MainThread  ] [INFO ]  Creating ac59e24e-5011-4a9f-a63d-f56f690c412d temporary folder
+2026-11-08 16:27:26,159 [MainThread  ] [INFO ]  Executing fpocket
+2026-11-08 16:27:26,159 [MainThread  ] [INFO ]  Launching command (it may take a while): cd ac59e24e-5011-4a9f-a63d-f56f690c412d ; fpocket -f input.pdb -m 3 -M 6 -i 35
+2026-11-08 16:27:26,428 [MainThread  ] [INFO ]  Command 'cd ac59e24e-5011-4a9f-a63d-f56f690c412d ; fpocket -f input.pdb -m 3 -M 6 -i 35...' finalized with exit code 0
+2026-11-08 16:27:26,429 [MainThread  ] [INFO ]  ***** POCKET HUNTING BEGINS ***** 
+***** POCKET HUNTING ENDS ***** 
+
+2026-11-08 16:27:26,430 [MainThread  ] [INFO ]  4 pockets found
+2026-11-08 16:27:26,430 [MainThread  ] [INFO ]  Sorting output data by druggability_score
+2026-11-08 16:27:26,431 [MainThread  ] [INFO ]  Adding:
+2026-11-08 16:27:26,431 [MainThread  ] [INFO ]  ['ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket1_atm.pdb', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket1_vert.pqr', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket2_atm.pdb', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket2_vert.pqr', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket3_atm.pdb', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket3_vert.pqr', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket4_atm.pdb', 'ac59e24e-5011-4a9f-a63d-f56f690c412d/input_out/pockets/pocket4_vert.pqr']
+2026-11-08 16:27:26,431 [MainThread  ] [INFO ]  to: /work/RNA/rna-ligand-docking/results/fpocket_all_pockets.zip
+2026-11-08 16:27:26,431 [MainThread  ] [INFO ]  Saving summary to /work/RNA/rna-ligand-docking/results/fpocket_summary.json file
+2026-11-08 16:27:26,432 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_ef933ade-9700-439b-b9c5-7768cbbd4088', 'ac59e24e-5011-4a9f-a63d-f56f690c412d']

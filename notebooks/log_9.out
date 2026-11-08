@@ -1,0 +1,11 @@
+2026-11-08 16:27:48,599 [MainThread  ] [INFO ]  Module: biobb_vs.fpocket.fpocket_select Version: 5.3.0
+2026-11-08 16:27:48,599 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_76bcaf8c-9c61-42f6-9a27-a38dfcf8f4d0
+2026-11-08 16:27:48,600 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/fpocket_filtered.zip --> sandbox_76bcaf8c-9c61-42f6-9a27-a38dfcf8f4d0
+2026-11-08 16:27:48,600 [MainThread  ] [INFO ]  Creating fa15ce1f-3431-4e11-ae37-80709c26fa70 temporary folder
+2026-11-08 16:27:48,601 [MainThread  ] [INFO ]  Extracting: /work/RNA/rna-ligand-docking/results/fpocket_filtered.zip
+2026-11-08 16:27:48,601 [MainThread  ] [INFO ]  to:
+2026-11-08 16:27:48,601 [MainThread  ] [INFO ]  ['fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket1_atm.pdb', 'fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket1_vert.pqr', 'fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket2_atm.pdb', 'fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket2_vert.pqr', 'fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket3_atm.pdb', 'fa15ce1f-3431-4e11-ae37-80709c26fa70/pocket3_vert.pqr']
+2026-11-08 16:27:48,601 [MainThread  ] [INFO ]  Saving /work/RNA/rna-ligand-docking/results/fpocket_cavity.pdb file
+2026-11-08 16:27:48,602 [MainThread  ] [INFO ]  Saving /work/RNA/rna-ligand-docking/results/fpocket_pocket.pqr file
+2026-11-08 16:27:48,602 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_76bcaf8c-9c61-42f6-9a27-a38dfcf8f4d0', 'fa15ce1f-3431-4e11-ae37-80709c26fa70']
+2026-11-08 16:27:48,602 [MainThread  ] [INFO ]  

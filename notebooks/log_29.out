@@ -1,0 +1,9 @@
+2026-11-08 16:29:45,981 [MainThread  ] [INFO ]  Module: biobb_vs.vina.autodock_vina_run Version: 5.3.0
+2026-11-08 16:29:45,981 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb
+2026-11-08 16:29:45,981 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/batch/ZINC000058581064/ligand.pdbqt --> sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb
+2026-11-08 16:29:45,981 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/prep_receptor.pdbqt --> sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb
+2026-11-08 16:29:45,981 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/box.pdb --> sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb
+2026-11-08 16:29:45,982 [MainThread  ] [INFO ]  Launching command (it may take a while): cd /work/RNA/rna-ligand-docking/notebooks/sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb ; vina --ligand ligand.pdbqt --receptor prep_receptor.pdbqt --center_x=8.423 --center_y=4.741 --center_z=-3.700 --size_x=16.034 --size_y=18.935 --size_z=17.575 --cpu 1 --exhaustiveness 8 --num_modes 9 --min_rmsd 1 --energy_range 3 --out docked.pdbqt --verbosity 1 > vina.log
+2026-11-08 16:30:00,647 [MainThread  ] [INFO ]  Command 'cd /work/RNA/rna-ligand-docking/notebooks/sandbox_80ca77b7-0e83-40f7-95f5-a9a255...' finalized with exit code 0
+2026-11-08 16:30:00,648 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_80ca77b7-0e83-40f7-95f5-a9a255ff8ccb']
+2026-11-08 16:30:00,648 [MainThread  ] [INFO ]  

@@ -8,6 +8,7 @@ from __future__ import annotations
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 import csv
+import math
 import re
 import shutil
 from typing import Any
@@ -73,33 +74,74 @@ def validate_sdf(path: Path) -> None:
         raise ValueError(f"{path} contains multiple molecules; split them first")
 
 
-def validate_pdbqt(path: Path) -> dict[str, int]:
-    """Check that the receptor file has actual PDBQT atom records and charges.
+def inspect_pdbqt(path: Path, max_examples: int = 5) -> dict:
+    """Report receptor PDBQT field problems without disguising them.
 
-    This is a format sanity check, NOT a chemical validation of RNA charges.
+    PDBQT has a partial charge in fixed columns 69-76 (Python [68:76])
+    and an atom type in columns 78-79 (Python [77:79]).
+    Structural/chemical correctness of RNA charges is NOT checked here.
     """
     path = Path(path)
     if not path.is_file():
         raise FileNotFoundError(path)
-    lines = [line for line in path.read_text(errors="replace").splitlines()
+    atoms = [line for line in path.read_text(errors="replace").splitlines()
              if line.startswith(("ATOM  ", "HETATM"))]
-    if not lines:
+    if not atoms:
         raise ValueError(f"{path}: no ATOM/HETATM records")
-    charges = 0
-    for line in lines:
-        if len(line) >= 79:
+    good, examples, charge_sum = 0, [], 0.0
+    for i, line in enumerate(atoms, 1):
+        reasons = []
+        if len(line) < 79:
+            reasons.append("short record / missing PDBQT fields")
+        else:
             try:
-                float(line[70:76]); atom_type = line[77:79].strip()
-                if atom_type:
-                    charges += 1
+                # Use the full documented PDBQT partial-charge field.
+                q = float(line[68:76])
+                if not math.isfinite(q):
+                    raise ValueError("nonfinite charge")
             except ValueError:
-                pass
-    if charges != len(lines):
+                reasons.append("charge missing or nonnumeric")
+                q = None
+            if not line[77:79].strip():
+                reasons.append("AutoDock atom type missing")
+            try:
+                for lo, hi in ((30, 38), (38, 46), (46, 54)):
+                    coord = float(line[lo:hi])
+                    if not math.isfinite(coord):
+                        raise ValueError("nonfinite coordinate")
+            except ValueError:
+                reasons.append("coordinates malformed")
+        if reasons:
+            if len(examples) < max_examples:
+                examples.append({"atom_index": i, "problem": ", ".join(reasons),
+                                 "record": line[:110]})
+        else:
+            good += 1
+            charge_sum += q
+    return {"atom_count": len(atoms), "charged_atom_count": good,
+            "bad_atom_count": len(atoms)-good,
+            "summed_partial_charge": round(charge_sum, 3) if good == len(atoms) else None,
+            "bad_examples": examples}
+
+
+def validate_pdbqt(path: Path) -> dict:
+    """Check all receptor records contain numerical charges, XYZ and atom types.
+
+    A valid *format* is insufficient to validate RNA protonation, atom types,
+    electrostatics or the applicability of AutoDock Vina's scoring function.
+    """
+    info = inspect_pdbqt(path)
+    if info["bad_atom_count"]:
+        example = info["bad_examples"][0]
         raise ValueError(
-            f"{path}: {charges}/{len(lines)} atoms have readable PDBQT "
-            "charges and atom types. Recheck RNA receptor preparation."
+            f"{path}: {info['charged_atom_count']}/{info['atom_count']} atoms have "
+            "readable fixed-column PDBQT fields; first failure: "
+            f"atom {example['atom_index']}: {example['problem']}, "
+            f"record={example['record']!r}"
         )
-    return {"atom_count": len(lines), "charged_atom_count": charges}
+    return {"atom_count": info["atom_count"],
+            "charged_atom_count": info["charged_atom_count"],
+            "summed_partial_charge": info["summed_partial_charge"]}
 
 
 def best_affinity(pdbqt: Path) -> float | None:

@@ -1,0 +1,8 @@
+2026-11-08 16:28:44,502 [MainThread  ] [INFO ]  Module: biobb_chemistry.babelm.babel_convert Version: 5.3.2
+2026-11-08 16:28:44,502 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_4d0c531e-749c-4499-8ce6-1a9077f8dc14
+2026-11-08 16:28:44,502 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/data/ligands/tempZINC000000000353.sdf --> sandbox_4d0c531e-749c-4499-8ce6-1a9077f8dc14
+2026-11-08 16:28:44,503 [MainThread  ] [INFO ]  Value  is not compatible as a coordinates value
+2026-11-08 16:28:44,503 [MainThread  ] [INFO ]  Launching command (it may take a while): obabel -isdf /work/RNA/rna-ligand-docking/notebooks/sandbox_4d0c531e-749c-4499-8ce6-1a9077f8dc14/tempZINC000000000353.sdf -opdb -O/work/RNA/rna-ligand-docking/notebooks/sandbox_4d0c531e-749c-4499-8ce6-1a9077f8dc14/ligand.pdb -r
+2026-11-08 16:28:44,514 [MainThread  ] [INFO ]  Command 'obabel -isdf /work/RNA/rna-ligand-docking/notebooks/sandbox_4d0c531e-749c-4499-8...' finalized with exit code 0
+2026-11-08 16:28:44,515 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_4d0c531e-749c-4499-8ce6-1a9077f8dc14']
+2026-11-08 16:28:44,516 [MainThread  ] [INFO ]  

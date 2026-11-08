@@ -1,0 +1,50 @@
+2026-11-08 16:04:19,492 [MainThread  ] [INFO ]  Module: biobb_structure_utils.utils.str_check_add_hydrogens Version: 5.3.0
+2026-11-08 16:04:19,493 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea
+2026-11-08 16:04:19,493 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/processed.pdb --> sandbox_13910487-7269-4399-9d4e-fb88827a11ea
+2026-11-08 16:04:19,494 [MainThread  ] [INFO ]  Launching command (it may take a while): check_structure -i /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea/processed.pdb -o /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea/prep_receptor.pdbqt --non_interactive --force_save command_list --list 'add_hydrogen --add_charges ADT --add_mode auto '
+2026-11-08 16:04:19,746 [MainThread  ] [INFO ]  Command 'check_structure -i /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-...' finalized with exit code 0
+2026-11-08 16:04:19,746 [MainThread  ] [INFO ]  ================================================================================
+=                   BioBB structure checking utility v3.16.4                   =
+=            P. Andrio, A. Hospital, G. Bayarri, J.L. Gelpi 2018-26            =
+================================================================================
+
+Warning: sequence features may not be available, use --sequence for  external fasta input
+Structure /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea/processed.pdb loaded
+ Entry id:  
+ Title: 
+ Experimental method: unknown
+
+ Num. models: 1
+ Num. chains: 1 (A: RNA)
+ Num. residues:  66
+ Num. residues with ins. codes:  0
+ Num. residues with H atoms: 66 (total 715 H atoms)
+ Num. HETATM residues:  0
+ Num. ligands or modified residues:  0
+ Num. water mol.:  0
+ Num. atoms:  2123
+
+Step 1: add_hydrogen --add_charges ADT --add_mode auto 
+Running add_hydrogen. Options: --add_charges ADT --add_mode auto
+No residues requiring selection on adding H atoms
+WARNING: fixing side chains, override with --no_fix_side
+Running fixside. Options: --fix all
+Found no residues with missing or unknown side chain atoms
+Selection: auto
+Updating partial charges and atom types
+Total assigned charge:     -87.24
+Command list completed
+Final Num. models: 1
+Final Num. chains: 1 (A: RNA)
+Final Num. residues:  66
+Final Num. residues with ins. codes:  0
+Final Num. residues with H atoms: 66 (total 643 H atoms)
+Final Num. HETATM residues:  0
+Final Num. ligands or modified residues:  0
+Final Num. water mol.:  0
+Final Num. atoms:  2051
+Structure saved on /work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea/prep_receptor.pdbqt
+
+2026-11-08 16:04:19,747 [MainThread  ] [INFO ]  /work/RNA/rna-ligand-docking/results/prep_receptor.pdbqt file ends with END, cleaning
+2026-11-08 16:04:19,748 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_13910487-7269-4399-9d4e-fb88827a11ea']
+2026-11-08 16:04:19,748 [MainThread  ] [INFO ]  

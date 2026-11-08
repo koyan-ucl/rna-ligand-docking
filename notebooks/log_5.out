@@ -1,0 +1,9 @@
+2026-11-08 16:04:03,118 [MainThread  ] [INFO ]  Module: biobb_chemistry.babelm.babel_convert Version: 5.3.2
+2026-11-08 16:04:03,119 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_16759858-d533-4611-a981-e30e82ea6943
+2026-11-08 16:04:03,119 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/single/ligand.pdb --> sandbox_16759858-d533-4611-a981-e30e82ea6943
+2026-11-08 16:04:03,119 [MainThread  ] [INFO ]  Value  is not compatible as a coordinates value
+2026-11-08 16:04:03,119 [MainThread  ] [INFO ]  Launching command (it may take a while): obabel -ipdb /work/RNA/rna-ligand-docking/notebooks/sandbox_16759858-d533-4611-a981-e30e82ea6943/ligand.pdb -opdbqt -O/work/RNA/rna-ligand-docking/notebooks/sandbox_16759858-d533-4611-a981-e30e82ea6943/prep_ligand.pdbqt -r
+2026-11-08 16:04:03,128 [MainThread  ] [INFO ]  Command 'obabel -ipdb /work/RNA/rna-ligand-docking/notebooks/sandbox_16759858-d533-4611-a...' finalized with exit code 0
+2026-11-08 16:04:03,128 [MainThread  ] [INFO ]  Removed 2 non PDBQT records (copied from the input by Open Babel) from /work/RNA/rna-ligand-docking/results/single/prep_ligand.pdbqt
+2026-11-08 16:04:03,129 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_16759858-d533-4611-a981-e30e82ea6943']
+2026-11-08 16:04:03,129 [MainThread  ] [INFO ]  

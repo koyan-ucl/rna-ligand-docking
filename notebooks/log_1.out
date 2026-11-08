@@ -1,0 +1,37 @@
+2026-11-08 16:01:32,636 [MainThread  ] [INFO ]  Module: biobb_vs.fpocket.fpocket_filter Version: 5.3.0
+2026-11-08 16:01:32,636 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_28ad0a12-2c1a-443f-b005-e954f30c5bea
+2026-11-08 16:01:32,636 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/fpocket_all_pockets.zip --> sandbox_28ad0a12-2c1a-443f-b005-e954f30c5bea
+2026-11-08 16:01:32,636 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/fpocket_summary.json --> sandbox_28ad0a12-2c1a-443f-b005-e954f30c5bea
+2026-11-08 16:01:32,637 [MainThread  ] [INFO ]  Performing a search under the next parameters: volume: [400.0, 2000.0]
+2026-11-08 16:01:32,637 [MainThread  ] [INFO ]  Found 3 matches:
+**********
+pocket1
+**********
+score: 0.441
+druggability_score: 0.0
+volume: 749.108
+
+**********
+pocket2
+**********
+score: 0.202
+druggability_score: 0.0
+volume: 1298.326
+
+**********
+pocket3
+**********
+score: 0.103
+druggability_score: 0.0
+volume: 415.07
+
+2026-11-08 16:01:32,637 [MainThread  ] [INFO ]  Creating 07c278ad-9ab7-4cdd-bc61-6bcac16dd63c temporary folder
+2026-11-08 16:01:32,637 [MainThread  ] [INFO ]  Extracting: /work/RNA/rna-ligand-docking/results/fpocket_all_pockets.zip
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  to:
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  ['07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket1_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket1_vert.pqr', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket2_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket2_vert.pqr', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket3_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket3_vert.pqr', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket4_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket4_vert.pqr']
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  Creating /work/RNA/rna-ligand-docking/results/fpocket_filtered.zip output file
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  Adding:
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  ['07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket1_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket1_vert.pqr', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket2_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket2_vert.pqr', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket3_atm.pdb', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c/pocket3_vert.pqr']
+2026-11-08 16:01:32,638 [MainThread  ] [INFO ]  to: /work/RNA/rna-ligand-docking/results/fpocket_filtered.zip
+2026-11-08 16:01:32,639 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_28ad0a12-2c1a-443f-b005-e954f30c5bea', '07c278ad-9ab7-4cdd-bc61-6bcac16dd63c']
+2026-11-08 16:01:32,639 [MainThread  ] [INFO ]  

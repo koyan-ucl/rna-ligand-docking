@@ -1,0 +1,12 @@
+2026-11-08 16:03:43,126 [MainThread  ] [INFO ]  Module: biobb_vs.utils.box Version: 5.3.0
+2026-11-08 16:03:43,126 [MainThread  ] [INFO ]  Directory successfully created: /work/RNA/rna-ligand-docking/notebooks/sandbox_b8c14f30-c94d-4a3f-8f62-62b116c626d6
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Copy to stage: /work/RNA/rna-ligand-docking/results/fpocket_pocket.pqr --> sandbox_b8c14f30-c94d-4a3f-8f62-62b116c626d6
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Loading pocket PQR selection from /work/RNA/rna-ligand-docking/results/fpocket_pocket.pqr
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Binding site center (Angstroms):      8.423     4.741    -3.700
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Adding 12.0 Angstroms offset
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Binding site size (Angstroms):       16.034    18.935    17.575
+2026-11-08 16:03:43,127 [MainThread  ] [INFO ]  Volume (cubic Angstroms): 42687
+2026-11-08 16:03:43,128 [MainThread  ] [INFO ]  Adding box coordinates
+2026-11-08 16:03:43,128 [MainThread  ] [INFO ]  Saving output PDB file (with box setting annotations): /work/RNA/rna-ligand-docking/results/box.pdb
+2026-11-08 16:03:43,128 [MainThread  ] [INFO ]  Removed: ['/work/RNA/rna-ligand-docking/notebooks/sandbox_b8c14f30-c94d-4a3f-8f62-62b116c626d6']
+2026-11-08 16:03:43,128 [MainThread  ] [INFO ]  
